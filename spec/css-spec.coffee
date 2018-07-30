@@ -1905,6 +1905,20 @@ describe 'CSS grammar', ->
           expect(tokens[17]).toEqual value: ';', scopes: ['source.css', 'meta.property-list.css', 'punctuation.terminator.rule.css']
           expect(tokens[19]).toEqual value: '}', scopes: ['source.css', 'meta.property-list.css', 'punctuation.section.property-list.end.bracket.curly.css']
 
+        it 'tokenises @-ms-viewport and @-o-viewport', ->
+          lines = grammar.tokenizeLines """
+            @-ms-viewport {
+              min-width: 640px;
+            }
+            @-o-viewport {
+              max-width: 800px;
+            }
+          """
+          expect(lines[0][0]).toEqual value: '@', scopes: ['source.css', 'meta.at-rule.viewport.css', 'keyword.control.at-rule.viewport.css', 'punctuation.definition.keyword.css']
+          expect(lines[0][1]).toEqual value: '-ms-viewport', scopes: ['source.css', 'meta.at-rule.viewport.css', 'keyword.control.at-rule.viewport.css']
+          expect(lines[3][0]).toEqual value: '@', scopes: ['source.css', 'meta.at-rule.viewport.css', 'keyword.control.at-rule.viewport.css', 'punctuation.definition.keyword.css']
+          expect(lines[3][1]).toEqual value: '-o-viewport', scopes: ['source.css', 'meta.at-rule.viewport.css', 'keyword.control.at-rule.viewport.css']
+
         it 'tokenises them across lines', ->
           lines = grammar.tokenizeLines """
             @VIEWPORT
