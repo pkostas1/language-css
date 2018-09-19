@@ -1332,7 +1332,7 @@
       }
     ]
   'media-query-list':
-    'begin': '(?=\\s*[^{;])'
+    'begin': '\\s*'
     'end': '(?=\\s*[{;])'
     'patterns': [
       {
