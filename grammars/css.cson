@@ -1461,7 +1461,7 @@
         'name': 'support.constant.vendored.property-value.css'
       }
       {
-        'match': '(?<![\\w-])(?i:arial|century|comic|courier|garamond|georgia|helvetica|impact|lucida|symbol|system|tahoma|times|trebuchet|utopia|verdana|webdings|sans-serif|serif|monospace)(?![\\w-])'
+        'match': '(?<![\\w-])(?i:arial|century|comic|courier|garamond|georgia|helvetica|impact|lucida|symbol|system|tahoma|times|trebuchet|utopia|verdana|webdings|sans-serif|serif|cursive|fantasy|monospace)(?![\\w-])'
         'name': 'support.constant.font-name.css'
       }
     ]
